@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  background-color: hsl(233, 47%, 7%);
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  border-radius: 1rem;
+}
+
+.illustration {
+  background: url("./images/image-header-desktop.jpg") no-repeat;
+  background-size: cover;
+  border-radius: 0 1rem 1rem 0;
+  position: relative;
+  z-index: 0;
+}
+.illustration::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(82, 16, 122, 0.69);
+  z-index: 5;
+  border-radius: 0 1rem 1rem 0;
+}
+
+
+.main {
+  border-radius: 1rem 0 0 1rem;
+  background-color: hsl(244, 38%, 16%);
+  padding: 4rem;
+}
+
+.main__title {
+  max-width: 27rem;
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.25rem;
+}
+
+.main__title--bold {
+  color: hsl(277, 64%, 61%);
+}
+
+.main__desc {
+  color: hsla(0, 0%, 100%, 0.75);
+  max-width: 27rem;
+  margin-bottom: 3rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: left;
+  gap: 3rem;
+}
+
+.stats__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: first baseline;
+}
+
+.stats__stat-number {
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.stats__stat-label {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 2rem;
+  }
+  .illustration {
+    background: url("./images/image-header-mobile.jpg") no-repeat;
+    width: 100%;
+    min-height: 30rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .illustration::before {
+    border-radius: 1rem 1rem 0 0;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+  .main__title {
+    font-size: 1.75rem;
+  }
+  .main__desc {
+    line-height: 2rem;
+  }
+  .stats {
+    display: flex;
+    flex-direction: column;
+  }
+  .stats__stat-label {
+    font-size: 0.9rem;
+  }
+}
